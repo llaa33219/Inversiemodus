@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    /* 팝업 크기를 키움 */
+    width: 300px;
+    height: 200px;
+  
+    /* 배경(초기 상태) */
+    background: linear-gradient(135deg, #00d674, #470b26);
+    background-size: 300% 300%;
+    background-position: 0% 0%;
+    color: #000000;
+  
+    /* 배경 및 필터가 자연스럽게 변하도록 트랜지션 */
+    transition: background-position 0.8s ease, filter 0.8s ease;
+  }
+  
+  /* body에 inverted 클래스가 추가되면 대각선 이동 + 색반전 */
+  body.inverted {
+    background-position: 100% 100%;
+    filter: invert(1);
+  }
+  
+  #container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 28px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #8d8d8d;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  

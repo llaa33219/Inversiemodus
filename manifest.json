@@ -1,0 +1,30 @@
+{
+  "name": "엔트리-반전모드",
+  "version": "1.0",
+  "description": "엔트리 사이트 색 반전 확장 프로그램",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://playentry.org/*",
+        "*://www.playentry.org/*",
+        "*://space.playentry.org/*",
+        "*://www.space.playentry.org/*"
+      ],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
